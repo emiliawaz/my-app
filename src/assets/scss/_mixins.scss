@@ -1,0 +1,11 @@
+@mixin tag {
+  display: inline-block;
+  background: #a9cbf1b9;
+  margin: .3rem .5rem;
+  padding: 0.1rem .5rem;
+  border-radius: .5rem;
+
+  &:first-child {
+    margin-left: 1rem;
+  }
+}

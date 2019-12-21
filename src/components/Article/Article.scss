@@ -1,0 +1,51 @@
+@import '../../assets/scss/_colors.scss';
+@import '../../assets/scss/_mixins.scss';
+
+.c-article__wrapper {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  padding: 6rem 2rem 2rem;
+  color: $dark-gray;
+  line-height: 1.5;
+}
+
+.c-article__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.c-article__image-credit {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: $gray;
+  max-width: 120rem;
+  margin: auto;
+}
+
+.c-article__title {
+  margin: 4rem 0;
+  font-size: 4rem;
+}
+
+.c-article__description {
+  color: $gray;
+  margin: 2rem 0 4rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.c-article__author {
+  margin: 3rem 0;
+  font-size: 1.8rem;
+}
+
+.c-article__date {
+  font-style: italic;
+}
+
+.c-article__tag {
+  @include tag;
+}
