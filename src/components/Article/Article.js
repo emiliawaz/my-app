@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import './Article.scss'
-import { api, baseURL } from '../../api'
-import formatDate from '../../services/dates.js'
+import 'components/Article/Article.scss'
+import { api, baseURL } from 'api'
+import formatDate from 'services/dates.js'
 import parse from 'html-react-parser'
 import Image from 'react-graceful-image'
-import Topbar from '../Topbar/Topbar'
+import Topbar from 'components/Topbar/Topbar'
 
 export default class Article extends Component {
   state = {
@@ -20,7 +20,7 @@ export default class Article extends Component {
     imageSource: ''
   }
 
-  getData() {
+  componentDidMount() {
     api.get(`/delivery/v1/content/${this.props.match.params.id}`).then(response => {
       const article = response.data
       
@@ -37,10 +37,6 @@ export default class Article extends Component {
         imageSource: article.elements.mainImage.value.leadImage.renditions ? `${baseURL}${article.elements.mainImage.value.leadImage.renditions.lead.source}` : ''
       })
     }).catch(e => console.log(e))
-  }
-
-  componentDidMount() {
-    this.getData()
   }
 
   render() {

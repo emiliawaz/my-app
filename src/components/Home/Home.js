@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './Home.scss'
-import formatDate from '../../services/dates.js'
-import ArticlesListItem from '../ArticlesListItem/ArticlesListItem'
-import { api } from '../../api'
+import 'components/Home/Home.scss'
+import formatDate from 'services/dates.js'
+import ArticlesListItem from 'components/ArticlesListItem/ArticlesListItem'
+import { api } from 'api'
 import qs from 'qs'
 
 export default class Home extends Component {
@@ -10,7 +10,7 @@ export default class Home extends Component {
     articles: []
   }
 
-  getData() {
+  componentDidMount() {
     api.get('/delivery/v1/search', {
       params: {
         q: '*:*',
@@ -34,10 +34,6 @@ export default class Home extends Component {
       }
       this.setState({ articles: articlesArray })
     }).catch(e => console.log(e))
-  }
-
-  componentDidMount() {
-    this.getData()
   }
 
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './ArticlesListItem.scss'
+import 'components/ArticlesListItem/ArticlesListItem.scss'
 
 export default class ArticlesListItem extends Component {
   render() {
@@ -14,7 +14,7 @@ export default class ArticlesListItem extends Component {
             <h3>{ this.props.description }</h3>
             <h4 className="c-articles-list-item__date">{ this.props.created }</h4>
             { this.props.tags ? 
-              <p>
+              <p className="test">
                 Tags:
                 { this.props.tags.map((tag, index) =>
                   <span 

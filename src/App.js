@@ -1,7 +1,7 @@
 import React from 'react'
-import './App.scss'
-import Article from './components/Article/Article'
-import Home from './components/Home/Home'
+import 'App.scss'
+import Article from 'components/Article/Article'
+import Home from 'components/Home/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {

@@ -1,7 +1,12 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import { mount } from 'enzyme'
+import App from './App'
+import Home from 'components/Home/Home'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-});
+describe('App', () => {
+  it('renders child components', () => {
+    const wrapper = mount(<App/>)
+
+    expect(wrapper.find(Home).exists()).toBe(true)
+  })
+})
